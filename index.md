@@ -2,7 +2,7 @@
 layout: default
 ---
 
-### Hello 👋 Cette page qui regroupe les travaux réalisés tout au long du semestre pour le cours de Projet de programmation encadré.
+Hello 👋 Cette page qui regroupe les travaux réalisés tout au long du semestre pour le cours de Projet de programmation encadré.
 
 ## Semaine 02 (30/09/2026)
 
