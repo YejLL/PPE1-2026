@@ -8,4 +8,4 @@ Hello 👋 Cette page qui regroupe les travaux réalisés tout au long du semest
 
 #### 1. Git : mise en pratique
 
-- [Jornal](https://github.com/YejLL/PPE1-2026/blob/main/Semaine02/gitintro/journal.md)
+- [Journal](https://github.com/YejLL/PPE1-2026/blob/main/Semaine02/gitintro/journal.md) : Créer un premier dépôt Git et apprendre les bases pour travailler avec Git.
