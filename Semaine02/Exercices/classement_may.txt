@@ -1,0 +1,15 @@
+   5 Chambéry
+   5 Portugal
+   6 Chine
+   6 Suisse
+   7 Savoie
+   9 Montréal
+   9 Québec
+  11 États-Unis
+  12 Suède
+  13 Ukraine
+  17 Espagne
+  19 Allemagne
+  19 Royaume-Uni
+  22 Italie
+  45 France

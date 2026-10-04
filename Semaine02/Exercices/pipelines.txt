@@ -1,0 +1,68 @@
+Pipelines : mise en pratique
+
+
+
+Exercice 1.a Comptes par années.
+	Compter le nombre d’annotations par année (2016, 2017 et 2018) :
+		- pour compter le nombre d'annotations sur les trois années : ls *.ann | wc -l
+	Plusieurs lignes de commandes successives seront nécessaires pour produire un fichier dont le contenu doit ressembler à :
+	 	- Premièrement, echo "Annotations en 2016: " > comptes.txt
+	 	- Deuxièmement, ls *.ann | grep "2016" | wc -l >> comptes.txt
+
+	 	- pour 2017, echo "Annotations en 2017: " >> comptes.txt
+	 		ls *.ann | grep "2017" | wc -l >> comptes.txt
+  
+	 	- pour 2018, echo "Annotations en 2018: " >> comptes.txt
+	 		ls *.ann | grep "2018" | wc -l >> comptes.txt
+		
+		La commande wc montre le nombre de lignes, de mots et d'octets contenus dans chaque fichier. 
+		Mais pour cet exercice, comme il demande de compter le nombre d'annotations par année, j'ai combiné ls *.ann, 
+		qui montre les fichiers qui se terminent par .ann, avec wc -l, où l'option -l compte seulement le nombre de lignes.
+
+
+Exercice 1.b Même question en limitant ce comptage aux lieux (Location)
+	Vous produirez un fichier suivant le même format que la question précédente.
+	 	- J'ai chosi des villes au hasard pour compter leurs annotations.
+		
+		- Paris : echo "Annotations pour Paris : " > locations.txt
+			cat *.ann | grep "Location" | grep "Paris" | wc -l >> locations.txt
+	 	- Rome : echo "Annotations pour Rome : " >> locations.txt
+			cat *.ann | grep "Location" | grep "Rome" | wc -l >> locations.txt
+	 	- Barcelone : echo "Annotations pour Barcelone : " >> locations.txt
+			cat *.ann | grep "Location" | grep "Barcelone" | wc -l >> locations.txt
+	 	- Londres : echo "Annotations pour Londres : " >> locations.txt
+			cat *.ann | grep "Location" | grep "Londres" | wc -l >> locations.txt
+		
+		En regardant le contenu des fichiers *.ann, des informations de location sont également annotées.
+		Si on cherche seulement le nom d'une ville, il peut aussi y avoir un nom de personnage qui porte le même nom que la ville.
+		Donc, comme je ne voulais relever que les annotations sur Location, j'ai utilisé grep, qui permet de rechercher un pattern donné, pour récupérer les annotations sur Location.
+		Concernant la commande cat, je m'en sers pour afficher le contenu des fichiers *.ann.
+
+
+Exercice 2.a Établir le classement des 15 lieux les plus cités pour chaque année
+	On produira un fichier par année.
+	Chaque fichier peut être créé en une seule ligne de commande et son contenu doit suivre le format ci-dessous, le chiffre devant chaque lieu indique le nombre d’occurrences trouvées dans le corpus :
+		
+		cat 2016*.ann | grep "Location" | cut -f3 | sort | uniq -c | sort -n | tail -15 > classement_2016.txt
+		cat 2017*.ann | grep "Location" | cut -f3 | sort | uniq -c | sort -n | tail -15 > classement_2017.txt
+		cat 2018*.ann | grep "Location" | cut -f3 | sort | uniq -c | sort -n | tail -15 > classement_2018.txt
+
+
+		La commande cut permet de sélectionner le champ qui nous intéresse avec l'option -f.
+		La commande sort trie les lignes d'un fichier par ordre alphabétique et la commande uniq sert à supprimer les lignes identiques qui se suivent.
+		Si on rajoute l'option -c à uniq, cela permet de compter le nombre d'occurrences de chaque ligne.
+		C'est la raison pour laquelle sort est utilisé avant uniq -c, afin de trier les lignes à l'avance.
+		Ensuite, la commande sort -n sert à trier les lignes en fonction des nombres, et tail permet d'afficher les dernières lignes.
+		Comme on voulait les 15 lieux les plus cités pour chaque année, j'ai utilisé l'option -15 avec tail.
+		- Source : man cut, man sort, man uniq, man tail
+
+Exercice 2.b Produire le même type de classement mais le mois de votre choix, toutes années confondues
+	Vous produirez un unique fichier dans un format comparable à ceux de la question précédente.
+		
+		cat 201[6-8]_05_*.ann | grep "Location" | cut -f3 | sort | uniq -c | sort -n | tail -15 > classement_may.txt
+
+
+		Pour cet exercice, j'ai utilisé [6-8] pour obtenir les résultats des années 2016 à 2018.
+		Ensuite, comme je voulais voir seulement le mois de mai, j'ai cherché manuellement le pattern correspondant et j'ai utilisé _05_*.
+		- Source : https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html
+	

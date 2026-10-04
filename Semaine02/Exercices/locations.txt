@@ -1,0 +1,8 @@
+Annotation pour Paris :
+     305
+Annotation pour Rome :
+      23
+Annotation pour Barcelone :
+      12
+Annotation pour Londres :
+      28
