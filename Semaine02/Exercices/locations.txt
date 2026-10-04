@@ -1,8 +1,6 @@
-Annotation pour Paris :
-     305
-Annotation pour Rome :
-      23
-Annotation pour Barcelone :
-      12
-Annotation pour Londres :
-      28
+Annotations de lieux en 2016 : 
+    3144
+Annotations de lieux en 2017 : 
+    2466
+Annotations de lieux en 2018 : 
+    3110
