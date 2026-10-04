@@ -1,6 +1,6 @@
 # Journal de bord du projet encadré
 
-Nom du projet : Pipelines : mise en pratique\n
+Nom du projet : Pipelines : mise en pratique  
 Date : 04 oct 2026
 
 
