@@ -19,7 +19,6 @@ Je travaille sous Mac OS. Je ne sais pas pourquoi la commande  ./[nom de fichier
 
 
 
-![스크린샷 2026-10-20 22.43.09](/Users/yejilee/Desktop/스크린샷 2026-10-20 22.43.09.png)
 
 Par ailleurs, le résultat n'était pas très beau à cause des espaces devant les nombres. J'ai donc fait des recherches sur Internet pour trouver comment supprimer ces espaces.
 
